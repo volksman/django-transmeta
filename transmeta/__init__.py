@@ -113,7 +113,7 @@ class TransMeta(models.base.ModelBase):
     '''
 
     def __new__(cls, name, bases, attrs):
-        attrs = SortedDict(attrs)
+        attrs = OrderedDict(attrs)
         if 'Meta' in attrs and hasattr(attrs['Meta'], 'translate'):
             fields = attrs['Meta'].translate
             delattr(attrs['Meta'], 'translate')
