@@ -6,7 +6,6 @@ from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 from collections import OrderedDict
 from django.utils.translation import get_language, ugettext_lazy as _
-from django.utils.encoding import python_2_unicode_compatible
 
 
 LANGUAGE_CODE = 0
@@ -164,7 +163,6 @@ class TransMeta(models.base.ModelBase):
             new_class._meta.translatable_fields = fields
         return new_class
 
-@python_2_unicode_compatible
 class LazyString(object):
 
     def __init__(self, proxy, lang):
